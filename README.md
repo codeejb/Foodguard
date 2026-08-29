@@ -1,114 +1,80 @@
 <div align="center">
 
-# FOODGUARD X
+  <img src="https://img.shields.io/badge/FOODGUARD_X-Food_Safety_Intelligence_Platform-1e3a8a?style=for-the-badge&logo=shield&logoColor=white" alt="FOODGUARD X">
 
-### AI + ML + Graph Intelligence + Blockchain Food Safety Platform for India
+  <h1>FOODGUARD X</h1>
+  <p><em>An AI-powered digital twin of India's food-safety ecosystem</em></p>
 
-**Predict → Prevent → Trace → Simulate → Act**
-
-An AI-powered digital twin of India's food ecosystem — predicting risk before it happens, tracing every batch, simulating contamination spread, and giving authorities a prioritized action plan.
-
-[![Status](https://img.shields.io/badge/Status-Active%20Development-2ea44f?style=for-the-badge)](#)
-[![License](https://img.shields.io/badge/License-MIT-blue?style=for-the-badge)](#)
-[![Build](https://img.shields.io/badge/Build-Passing-brightgreen?style=for-the-badge)](#)
-
-![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
-![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=flat-square&logo=fastapi&logoColor=white)
-![Next.js](https://img.shields.io/badge/Next.js-000000?style=flat-square&logo=nextdotjs&logoColor=white)
-![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white)
-![TensorFlow](https://img.shields.io/badge/TensorFlow-FF6F00?style=flat-square&logo=tensorflow&logoColor=white)
-![Neo4j](https://img.shields.io/badge/Neo4j-008CC1?style=flat-square&logo=neo4j&logoColor=white)
-![Hyperledger](https://img.shields.io/badge/Hyperledger%20Fabric-2F3134?style=flat-square&logo=hyperledger&logoColor=white)
-![AWS](https://img.shields.io/badge/AWS-232F3E?style=flat-square&logo=amazonaws&logoColor=white)
-![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white)
-![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?style=flat-square&logo=postgresql&logoColor=white)
+  [![Status](https://img.shields.io/badge/Status-Active_Development-2ea44f.svg)](#)
+  [![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+  [![Build](https://img.shields.io/badge/Build-Passing-brightgreen.svg)](#)
+  [![Blockchain](https://img.shields.io/badge/Ledger-Hyperledger_Fabric-2F3134.svg)](#)
+  [![Graph](https://img.shields.io/badge/Graph-Neo4j-008CC1.svg)](#)
 
 </div>
 
----
+# FOODGUARD X
 
-## Table of Contents
+## Predict → Prevent → Trace → Simulate → Act
 
-1. [The Problem](#1-the-problem)
-2. [Core Idea — Digital Twin](#2-core-idea--digital-twin)
-3. [End-to-End Workflow](#3-end-to-end-workflow)
-4. [System Architecture](#4-system-architecture)
-5. [Technology Stack](#5-technology-stack)
-6. [Digital Food DNA](#6-digital-food-dna)
-7. [Predictive & Investigative Intelligence](#7-predictive--investigative-intelligence)
-8. [AI Vision, Citizen Network & What-If Simulator](#8-ai-vision-citizen-network--what-if-simulator)
-9. [Blockchain Food Passport](#9-blockchain-food-passport)
-10. [Live India Risk Map & Consumer Experience](#10-live-india-risk-map--consumer-experience)
-11. [AI Agent Architecture](#11-ai-agent-architecture)
-12. [Data Model](#12-data-model)
-13. [Security, Privacy & Responsible AI](#13-security-privacy--responsible-ai)
-14. [Observability & MLOps](#14-observability--mlops)
-15. [Project Structure](#15-project-structure)
-16. [API Design](#16-api-design)
-17. [Key User Journeys](#17-key-user-journeys)
-18. [Why This Is Different](#18-why-this-is-different)
-19. [Real-World Example](#19-real-world-example)
-20. [Roadmap & Getting Started](#20-roadmap--getting-started)
+[FOODGUARD X](#) is a national-scale food-safety intelligence platform for India. It predicts risk before it happens, traces every food batch from source to consumer, simulates how contamination could spread, and gives authorities a prioritized, explainable action plan — instead of waiting for a complaint to arrive after the fact.
 
 ---
 
-## 1. The Problem
+## The Problem
 
-Food safety in India today is mostly **reactive**.
+Food safety today is reactive: a problem occurs, people get sick, a complaint is filed, then inspection and recall follow.
 
 ```mermaid
 flowchart LR
-    A[Food Problem] --> B[People Get Sick] --> C[Complaint] --> D[Inspection] --> E[Testing] --> F[Recall]
+    A[Food Problem] --> B[People Get Sick] --> C[Complaint] --> D[Inspection] --> E[Recall]
     style A fill:#7f1d1d,stroke:#ef4444,color:#fff
     style B fill:#7f1d1d,stroke:#ef4444,color:#fff
     style C fill:#78350f,stroke:#f59e0b,color:#fff
     style D fill:#78350f,stroke:#f59e0b,color:#fff
-    style E fill:#78350f,stroke:#f59e0b,color:#fff
-    style F fill:#14532d,stroke:#22c55e,color:#fff
+    style E fill:#14532d,stroke:#22c55e,color:#fff
 ```
 
-FOODGUARD X flips the model:
+FOODGUARD X inverts this — signals are analyzed continuously so risk is caught before a crisis, not after:
 
 ```mermaid
 flowchart LR
-    A[Food Data] --> B[AI Detects Signals] --> C[Predict Risk] --> D[Find Root Cause] --> E[Simulate Spread] --> F[Recommend Action] --> G[Prevent Crisis]
+    A[Food Data] --> B[AI Detects Signals] --> C[Predict Risk] --> D[Simulate Spread] --> E[Recommend Action] --> F[Prevent Crisis]
     style A fill:#1e3a8a,stroke:#3b82f6,color:#fff
     style B fill:#1e3a8a,stroke:#3b82f6,color:#fff
     style C fill:#312e81,stroke:#818cf8,color:#fff
-    style D fill:#312e81,stroke:#818cf8,color:#fff
-    style E fill:#4c1d95,stroke:#a78bfa,color:#fff
-    style F fill:#14532d,stroke:#22c55e,color:#fff
-    style G fill:#052e16,stroke:#22c55e,color:#fff
+    style D fill:#4c1d95,stroke:#a78bfa,color:#fff
+    style E fill:#14532d,stroke:#22c55e,color:#fff
+    style F fill:#052e16,stroke:#22c55e,color:#fff
 ```
-
-Traditional food safety asks *"Is this food unsafe?"* — FOODGUARD X asks:
-
-> **"Where could a problem happen next, why, how could it spread, and what should we do before it becomes a crisis?"**
 
 ---
 
-## 2. Core Idea — Digital Twin
+## Key Features
 
-FOODGUARD X builds a live digital twin of the food journey, enriched with environmental, regulatory, and human signals.
+### Predictive Intelligence
+- **Digital Food DNA**: Every batch gets a unique, fully traceable identity from source to consumer
+- **Food Safety Time Machine**: Projects how a batch's safety score could evolve over the next 12–72 hours
+- **Unknown Risk Detector**: Surfaces statistically unusual patterns nobody wrote an explicit rule for
 
-```mermaid
-flowchart LR
-    S[Supplier] --> F[Factory] --> L[Lab] --> W[Warehouse] --> T[Transport] --> D[Distributor] --> R[Retailer] --> C[Consumer]
-    classDef n fill:#0f172a,stroke:#38bdf8,color:#e2e8f0
-    class S,F,L,W,T,D,R,C n
-```
+### Graph & Simulation Engine
+- **Contamination Spread Simulator**: Models how a contaminated batch could travel through the supply chain
+- **What-If Decision Engine**: Lets authorities simulate a recall or shutdown before acting on it
+- **AI Food Crime-Scene Investigator**: Connects complaints, batches, warehouses, and sensor anomalies into an evidence chain
 
-| Signal Type | Examples |
-|---|---|
-| Environmental | Weather, geography, flood/temperature data |
-| Regulatory | Inspections, lab reports |
-| Operational | Storage, humidity, transport logs |
-| Human | Consumer & citizen complaints |
-| Historical | Past incidents and recurring failures |
+### Human-in-the-Loop AI
+- **AI Inspector Copilot**: Ranks where inspectors should act first, with reasons attached
+- **AI Vision Inspector**: Flags packaging damage, tampering, or storage issues from images — as a risk indicator, not a lab verdict
+- **Citizen Food Safety Network**: Clusters scattered public reports into a single actionable lead
+
+### Trust & Traceability
+- **Blockchain Food Passport**: Tamper-evident audit trail for every key supply-chain event, on a permissioned Hyperledger Fabric ledger
+- **Live India Risk Map**: Region-level risk with an explanation of *why*, not just a color
+- **Self-Learning Loop**: Real incident outcomes continuously retrain and improve the models
 
 ---
 
-## 3. End-to-End Workflow
+## End-to-End Workflow
 
 ```mermaid
 flowchart TD
@@ -127,7 +93,7 @@ flowchart TD
 
 ---
 
-## 4. System Architecture
+## System Architecture
 
 ```mermaid
 flowchart TB
@@ -140,7 +106,7 @@ flowchart TB
     subgraph L3["Storage"]
         C1[S3 · Operational DB · Time-Series · Search · Data Lake]
     end
-    subgraph L4["Intelligence"]
+    subgraph L4["Intelligence Layer"]
         D1[ML · Computer Vision · Forecasting · Anomaly Detection · GNN · LLM Agents]
     end
     subgraph L5["Graph Intelligence"]
@@ -171,63 +137,151 @@ flowchart TB
     style L8 fill:#083344,stroke:#22d3ee
 ```
 
-**Graph layer** models `Supplier → Batch → Factory → Warehouse → Transport → Distributor → Retailer → Consumer`, surfacing hidden multi-hop connections. **Blockchain** (permissioned, Hyperledger Fabric) is used selectively — batch identity, lab verification, inspections, audit history — not for general app data.
+The **graph layer** models `Supplier → Batch → Factory → Warehouse → Transport → Distributor → Retailer → Consumer`, surfacing hidden multi-hop connections a flat database would miss. The **blockchain layer** is used selectively — batch identity, lab verification, inspections, audit history — not as a database for everything.
 
 ---
 
-## 5. Technology Stack
+## Technology Stack
 
-<table>
-<tr><th>Layer</th><th>Technology</th><th>Purpose</th></tr>
-<tr><td>Frontend</td><td><img src="https://img.shields.io/badge/Next.js-000000?style=flat-square&logo=nextdotjs&logoColor=white"/> <img src="https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white"/> <img src="https://img.shields.io/badge/TailwindCSS-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white"/></td><td>Command Center UI</td></tr>
-<tr><td>Maps</td><td><img src="https://img.shields.io/badge/Mapbox-000000?style=flat-square&logo=mapbox&logoColor=white"/></td><td>India risk visualization</td></tr>
-<tr><td>Backend</td><td><img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white"/> <img src="https://img.shields.io/badge/FastAPI-009688?style=flat-square&logo=fastapi&logoColor=white"/></td><td>APIs & AI services</td></tr>
-<tr><td>AI / ML</td><td><img src="https://img.shields.io/badge/Amazon%20Bedrock-232F3E?style=flat-square&logo=amazonaws&logoColor=white"/> <img src="https://img.shields.io/badge/SageMaker-232F3E?style=flat-square&logo=amazonaws&logoColor=white"/> <img src="https://img.shields.io/badge/TensorFlow-FF6F00?style=flat-square&logo=tensorflow&logoColor=white"/></td><td>LLM agents, training, computer vision</td></tr>
-<tr><td>Graph</td><td><img src="https://img.shields.io/badge/Neo4j-008CC1?style=flat-square&logo=neo4j&logoColor=white"/></td><td>Supply-chain intelligence</td></tr>
-<tr><td>Blockchain</td><td><img src="https://img.shields.io/badge/Hyperledger%20Fabric-2F3134?style=flat-square&logo=hyperledger&logoColor=white"/></td><td>Tamper-evident audit trail</td></tr>
-<tr><td>Storage</td><td><img src="https://img.shields.io/badge/Amazon%20S3-569A31?style=flat-square&logo=amazons3&logoColor=white"/> <img src="https://img.shields.io/badge/PostgreSQL-4169E1?style=flat-square&logo=postgresql&logoColor=white"/> <img src="https://img.shields.io/badge/OpenSearch-005EB8?style=flat-square&logo=opensearch&logoColor=white"/></td><td>Raw data, app data, search</td></tr>
-<tr><td>Events / IoT</td><td><img src="https://img.shields.io/badge/AWS%20IoT-232F3E?style=flat-square&logo=amazonaws&logoColor=white"/> <img src="https://img.shields.io/badge/EventBridge-232F3E?style=flat-square&logo=amazonaws&logoColor=white"/></td><td>Real-time ingestion</td></tr>
-<tr><td>Compute</td><td><img src="https://img.shields.io/badge/ECS%20%2F%20EKS-232F3E?style=flat-square&logo=amazonaws&logoColor=white"/> <img src="https://img.shields.io/badge/Lambda-FF9900?style=flat-square&logo=awslambda&logoColor=white"/> <img src="https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white"/></td><td>Containers & serverless</td></tr>
-<tr><td>Auth / Ops</td><td>Cognito · <img src="https://img.shields.io/badge/CloudWatch-232F3E?style=flat-square&logo=amazonaws&logoColor=white"/> · <img src="https://img.shields.io/badge/GitHub%20Actions-2088FF?style=flat-square&logo=githubactions&logoColor=white"/></td><td>Identity, monitoring, CI/CD</td></tr>
-</table>
+### Frontend
+- **Next.js / React**: Command Center and consumer-facing UI
+- **TypeScript + Tailwind CSS**: Type-safe, premium interface
+- **Mapbox**: India-wide risk visualization
 
-> Table reflects the target architecture. See [`docs/architecture/`](./docs/architecture) for what's actually implemented vs. planned.
+### Backend & AI
+- **Python + FastAPI**: Core APIs and AI services
+- **Amazon Bedrock**: LLM intelligence and agent orchestration
+- **Amazon SageMaker**: Model training and deployment
+- **TensorFlow + OpenCV**: Computer vision for packaging/food inspection
+- **Neo4j / Amazon Neptune**: Supply-chain graph intelligence
+
+### Data & Blockchain
+- **Amazon S3**: Raw data, images, reports
+- **PostgreSQL**: Application data
+- **Amazon OpenSearch**: Search and investigation
+- **Hyperledger Fabric**: Permissioned, tamper-evident audit ledger
+
+### Infrastructure
+- **AWS IoT + Amazon EventBridge**: Real-time sensor ingestion and event-driven architecture
+- **AWS ECS/EKS + Lambda**: Containerized and serverless compute
+- **Docker**: Consistent deployments
+- **GitHub Actions**: CI/CD automation
+- **Amazon CloudWatch**: Monitoring and observability
+
+> This table reflects the target architecture. See `docs/architecture/` for what's actually implemented versus planned for production scale.
 
 ---
 
-## 6. Digital Food DNA
+## Project Structure
 
-Every batch gets a unique, traceable identity through its entire journey.
+```
+foodguard-x/
+├── apps/
+│   ├── web/                     # National Command Center UI
+│   ├── inspector/                # Inspector-facing application
+│   └── consumer/                 # Consumer QR / passport app
+├── services/
+│   ├── api/                      # Core API gateway
+│   ├── risk-engine/              # Risk scoring service
+│   ├── graph-engine/             # Graph intelligence service
+│   ├── vision-engine/            # Computer vision service
+│   ├── forecast-engine/          # Time-series forecasting
+│   └── simulation-engine/        # Contamination / what-if simulation
+├── agents/
+│   ├── orchestrator/
+│   ├── risk-agent/
+│   ├── graph-agent/
+│   ├── investigation-agent/
+│   ├── vision-agent/
+│   └── inspector-agent/
+├── blockchain/
+│   └── hyperledger/               # Chaincode + network config
+├── ml/
+│   ├── training/
+│   ├── inference/
+│   └── evaluation/
+├── data/
+│   ├── schemas/
+│   └── pipelines/
+├── infrastructure/
+│   ├── terraform/
+│   ├── docker/
+│   └── kubernetes/
+├── docs/
+│   ├── architecture/
+│   └── api/
+├── .gitignore
+├── docker-compose.yml
+└── README.md
+```
+
+---
+
+## Installation & Setup
+
+### Prerequisites
+- **Node.js** (v18 or higher)
+- **Python** (v3.10 or higher)
+- **Docker**
+- **Neo4j** (local or Aura)
+- **AWS account** (for cloud services)
+
+### 1. Clone the Repository
+```bash
+git clone https://github.com/<your-org>/foodguard-x.git
+cd foodguard-x
+```
+
+### 2. Backend & API Setup
+```bash
+cd services/api
+npm install
+npm run dev
+```
+
+### 3. ML / AI Services Setup
+```bash
+cd ml
+python -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
+python main.py
+```
+
+### 4. Frontend Setup
+```bash
+cd apps/web
+npm install
+npm run dev
+```
+
+### 5. Full Stack (Docker)
+```bash
+docker-compose up --build
+```
+
+---
+
+## Features in Detail
+
+### Digital Food DNA
+Every batch is assigned a unique traceable identity that follows it through the supply chain:
 
 ```mermaid
 flowchart LR
-    ID["Batch M492"] --> S[Source] --> SU[Supplier] --> FA[Factory] --> LT[Lab] --> WH[Warehouse] --> TR[Transport] --> RE[Retailer] --> CO[Consumer]
+    ID["Batch M492"] --> S[Supplier] --> F[Factory] --> L[Lab] --> W[Warehouse] --> T[Transport] --> R[Retailer] --> C[Consumer]
     classDef dna fill:#1e1b4b,stroke:#818cf8,color:#e0e7ff
-    class ID,S,SU,FA,LT,WH,TR,RE,CO dna
+    class ID,S,F,L,W,T,R,C dna
 ```
 
-```text
+```
 Current Safety Score:   84/100
 Predicted (+24h):       62/100
 Predicted (+48h):       31/100
 ```
 
-**Time Machine** — the same score is projected forward:
-
-```mermaid
-flowchart LR
-    N["NOW · Safe"] --> H24["+24h · Moderate"] --> H48["+48h · High"] --> H72["+72h · Critical"]
-    style N fill:#052e16,stroke:#22c55e,color:#dcfce7
-    style H24 fill:#422006,stroke:#f59e0b,color:#fef3c7
-    style H48 fill:#7c2d12,stroke:#fb923c,color:#ffedd5
-    style H72 fill:#7f1d1d,stroke:#ef4444,color:#fee2e2
-```
-
----
-
-## 7. Predictive & Investigative Intelligence
-
-**Contamination Spread Simulator** — models how a batch could travel through the network:
+### Contamination Spread Simulator
+Models potential downstream exposure from a single point of contamination, and answers: *"Which single intervention could reduce the highest potential exposure?"*
 
 ```mermaid
 flowchart TD
@@ -240,98 +294,39 @@ flowchart TD
     style DC fill:#78350f,stroke:#f59e0b,color:#fff
 ```
 
-Answers: *"Which single intervention could reduce the highest potential exposure?"*
+### AI Inspector Copilot
+Prioritizes inspection targets with explainable reasoning, so human attention goes where it matters most:
 
-**Food Crime-Scene Investigator** — connects scattered signals into an evidence chain:
-
-```text
-23 Complaints → Same Product → Same Batch → Same Distributor → Same Warehouse → Possible Origin
 ```
-
-Outputs a possible source, supporting evidence, confidence score, and a recommended investigation — **never** an automatic accusation.
-
-**Unknown Risk Detector** — flags statistically unusual combinations (complaint clusters, abnormal temperature, unexpected graph links) that no fixed rule was written for:
-
-```text
-⚠ NEW FOOD SAFETY ANOMALY DETECTED
-```
-
-**Inspector Copilot** — prioritizes where human attention matters most:
-
-```text
 1. Warehouse #17     Risk 94/100   Cold-chain anomaly + downstream spread
 2. Restaurant #42    Risk 87/100   Complaint cluster + supplier pattern
+3. Batch #M492       Risk 82/100   Predicted safety degradation
 ```
 
----
-
-## 8. AI Vision, Citizen Network & What-If Simulator
-
-| Feature | Input | Output |
-|---|---|---|
-| **AI Vision Inspector** | Food/packaging images, storage photos | Explainable flags — e.g. *"Seal geometry differs from expected pattern"* (a risk indicator, not a lab diagnosis) |
-| **Citizen Network** | Photo, video, voice, location, QR | Clusters unrelated reports into a possible common batch/product |
-| **What-If Simulator** | Scenario question (*"close this warehouse?"*) | Estimated affected batches, exposure reduction, and new disruptions — estimates, not guarantees |
-
----
-
-## 9. Blockchain Food Passport
-
-```mermaid
-flowchart LR
-    P[Produced] --> T[Tested] --> S[Stored] --> Tr[Transported] --> I[Inspected] --> So[Sold]
-    classDef bc fill:#1a2e1a,stroke:#22c55e,color:#dcfce7
-    class P,T,S,Tr,I,So bc
-```
-
-Each event becomes a tamper-evident record on **Hyperledger Fabric**. Blockchain preserves what was reported — it does not independently verify that the underlying data was true.
-
----
-
-## 10. Live India Risk Map & Consumer Experience
-
-```text
-🟢 LOW   🟡 WATCH   🟠 HIGH   🔴 CRITICAL
-```
-
-Selecting a region always explains *why* — complaint spikes, cold-chain anomalies, weather, supply concentration, history.
-
-**Consumer flow:**
-
-```mermaid
-flowchart LR
-    A[Scan QR] --> B[Food DNA] --> C[Current Risk] --> D[Predicted Risk] --> E["SAFE 92/100"]
-    classDef c fill:#052e16,stroke:#22c55e,color:#dcfce7
-    class A,B,C,D,E c
-```
-
----
-
-## 11. AI Agent Architecture
-
+### AI Agent Architecture
 ```mermaid
 flowchart TD
     O[AI Orchestrator]
-    O --> RA[Risk Agent] --> RDB[(Risk DB)]
-    O --> GA[Graph Agent] --> GDB[(Graph DB)]
-    O --> IA[Investigation Agent] --> EV[(Evidence)]
-    O --> VA[Vision Agent] --> IMG[(Images)]
-    O --> FA[Forecast Agent] --> TS[(Time Series)]
-    O --> InsA[Inspector Agent] --> SimA[Simulation Agent] --> CitA[Citizen Agent]
+    O --> RA[Risk Agent]
+    O --> GA[Graph Agent]
+    O --> IA[Investigation Agent]
+    O --> VA[Vision Agent]
+    O --> FA[Forecast Agent]
+    O --> InsA[Inspector Agent]
+    InsA --> SimA[Simulation Agent]
+    SimA --> CitA[Citizen Agent]
 
     classDef orch fill:#4c1d95,stroke:#e879f9,color:#fdf4ff
     classDef agent fill:#1e1b4b,stroke:#818cf8,color:#e0e7ff
-    classDef store fill:#0c4a6e,stroke:#38bdf8,color:#e0f2fe
     class O orch
     class RA,GA,IA,VA,FA,InsA,SimA,CitA agent
-    class RDB,GDB,EV,IMG,TS store
 ```
 
-Nine agents, one orchestrator — each owns one job (risk, graph, investigation, vision, forecast, inspection, simulation, citizen reports), coordinated centrally so recommendations stay consistent and explainable.
+Nine agents, one orchestrator — each owns a single job (risk, graph, investigation, vision, forecast, inspection, simulation, citizen reports), coordinated centrally so recommendations stay consistent and explainable.
 
 ---
 
-## 12. Data Model
+## Data Model
 
 ```mermaid
 erDiagram
@@ -347,138 +342,158 @@ erDiagram
 
 ---
 
-## 13. Security, Privacy & Responsible AI
+## API Design
 
-- RBAC, encryption at rest/in transit, rate-limited APIs, full audit logs
-- Permissioned blockchain — only verified participants can write
-- Citizen identity never exposed publicly; public data is aggregated/anonymized
-- **Human approval required for all high-impact actions** (recalls, shutdowns, alerts)
-
-**Limits, stated plainly:** predictions are probabilistic; computer vision is a risk indicator, not a lab test; simulations are estimates; citizen reports can contain false positives; AI recommendations always need human validation; blockchain can't make false input true; model quality depends on data quality.
-
----
-
-## 14. Observability & MLOps
-
-```mermaid
-flowchart LR
-    D[Data] --> M[Model] --> P[Prediction] --> F[Feedback] --> Mo[Monitoring] --> R[Retraining] --> V[Validation] --> De[Deployment]
-    De -.-> M
-    classDef ops fill:#083344,stroke:#22d3ee,color:#cffafe
-    class D,M,P,F,Mo,R,V,De ops
+```
+POST /api/v1/batches                    GET  /api/v1/batches/{id}/risk
+POST /api/v1/incidents                  GET  /api/v1/incidents/{id}/investigation
+GET  /api/v1/risk/india                 GET  /api/v1/risk/region/{id}
+POST /api/v1/simulation                 POST /api/v1/vision/analyze
+POST /api/v1/lab/analyze                POST /api/v1/citizen/report
 ```
 
-Model versioning, drift detection, prediction/API/infra monitoring, rollback, CI/CD, automated testing.
+> Example routes — see `docs/api/` for endpoints actually implemented.
 
 ---
 
-## 15. Project Structure
+## Testing
 
-```text
-foodguard-x/
-├── apps/            # web (command center), inspector, consumer
-├── services/        # api, risk-engine, graph-engine, vision-engine,
-│                       forecast-engine, simulation-engine, investigation-engine
-├── agents/          # orchestrator + 8 specialized agents
-├── blockchain/      # Hyperledger Fabric chaincode & network config
-├── ml/              # training, inference, evaluation, feature-engineering
-├── data/            # schemas, pipelines, samples
-├── infrastructure/  # terraform, docker, kubernetes
-├── docs/            # architecture, api, decisions
-└── README.md
+```bash
+# Backend / API tests
+cd services/api
+npm test
+
+# ML model tests
+cd ml
+python -m pytest tests/
+
+# Frontend tests
+cd apps/web
+npm test
 ```
 
----
-
-## 16. API Design
-
-```text
-POST /api/v1/batches                          GET /api/v1/batches/{id}/risk
-POST /api/v1/incidents                         GET /api/v1/incidents/{id}/investigation
-GET  /api/v1/risk/india                        GET /api/v1/risk/region/{id}
-POST /api/v1/simulation                        POST /api/v1/vision/analyze
-POST /api/v1/lab/analyze                       POST /api/v1/citizen/report
-```
-
-> Example routes — see [`docs/api/`](./docs/api) for what's live.
+**Test Coverage**
+- Unit tests for all API endpoints
+- Integration tests for end-to-end user workflows
+- ML model accuracy and drift testing
+- Simulation and graph-query correctness tests
+- Security and access-control testing
 
 ---
 
-## 17. Key User Journeys
+## Continuous Integration
 
-<table>
-<tr><th>Authority</th><th>Inspector</th><th>Business</th><th>Consumer</th></tr>
-<tr valign="top">
-<td>Login → Risk Map → Threat → Investigation → Graph → Simulation → Action</td>
-<td>Copilot → Priorities → Site Visit → Vision Inspector → Evidence → Submit</td>
-<td>Register Batch → Lab Report → Track DNA → Monitor Risk → Resolve</td>
-<td>Scan QR → Food Passport → Safety Score → Why → Act</td>
-</tr>
-</table>
+The project uses **GitHub Actions** for automated CI on every push and pull request targeting `main`.
+
+| Workflow | Trigger | What it does |
+|---|---|---|
+| `api-ci.yml` | `push`/`pull_request` → `main` | `npm ci` → lint → `npm test` |
+| `ml-ci.yml` | `push`/`pull_request` → `main` | `pip install` → lint → `pytest` |
+| `deploy.yml` | `push` → `main` | Build & deploy to AWS |
 
 ---
 
-## 18. Why This Is Different
+## Security & Trust
 
-| Traditional | FOODGUARD X |
-|---|---|
-| Reactive | Predictive |
-| Manual investigation | AI-assisted investigation |
-| Static records | Connected food graph |
-| Test after problem | Forecast before crisis |
-| Basic traceability | Digital Food DNA |
-| Simple recall | Contamination simulation |
-| Historical data only | Continuous self-learning |
+- Role-based access control (RBAC) across every application layer
+- Encryption at rest and in transit; rate-limited, authenticated APIs
+- Permissioned blockchain — only verified participants can write records
+- Full audit logs for sensitive actions
+- **Human approval required for all high-impact actions** (recalls, shutdowns, public alerts)
+
+### Privacy
+- Citizen identity is never exposed in public-facing outputs
+- Public dashboards show aggregated or anonymized data only
+- Data minimization — only necessary information is collected
+
+### Limitations & Responsible AI
+- Predictions are probabilistic, not deterministic certainties
+- Computer vision output is a risk indicator, not a laboratory test
+- Simulation outputs are estimates, not guaranteed outcomes
+- AI recommendations require human validation before action is taken
+- Blockchain preserves what was recorded — it does not make false input data true
 
 ---
 
-## 19. Real-World Example
+## Deployment
 
 ```mermaid
 flowchart TD
-    A["Milk Batch M492"] --> B[Cold-chain temp rises] --> C[AI flags anomaly] --> D[Score falls, forecast worsens]
-    D --> E[Complaints appear] --> F[Graph Agent finds common warehouse] --> G[Simulation models spread]
-    G --> H[Inspector Copilot prioritizes site] --> I[Authority investigates] --> J[Blockchain logs it all] --> K[Outcome feeds back into training]
-    classDef s fill:#1e1b4b,stroke:#818cf8,color:#e0e7ff
-    class A,B,C,D,E,F,G,H,I,J,K s
+    U[Users] --> CDN[CloudFront / CDN] --> WA[Web Application] --> GW[API Gateway]
+    GW --> CS[Containerized Services] --> AI[AI / ML / Graph / Simulation]
+    CS --> DB[Data + Blockchain Layer]
+    classDef d fill:#0f172a,stroke:#38bdf8,color:#e2e8f0
+    class U,CDN,WA,GW,CS,AI,DB d
 ```
 
-A temperature sensor drifts out of range → the score drops and the forecast worsens → complaints trickle in → the graph reveals they all trace to one warehouse → a simulation estimates how far the batch may have spread → the warehouse becomes today's top inspection priority — all before it becomes a public health story.
+Built on event-driven, containerized services for elastic scaling, with AI/ML workloads decoupled from core transactional services — designed to scale from a single city to national deployment.
 
 ---
 
-## 20. Roadmap & Getting Started
+## Contributing
 
-| Phase | Focus |
-|---|---|
-| 1 — MVP | Batch tracking, Food DNA, risk scoring, dashboard, citizen reporting |
-| 2 — Intelligence | Graph intelligence, forecasting, anomaly detection |
-| 3 — Advanced AI | Vision, agents, contamination simulation, what-if engine |
-| 4 — National Scale | IoT, multi-state deployment, enterprise integrations, full MLOps |
+We welcome contributions from the community. Please read our Contributing Guidelines before getting started.
 
-```bash
-git clone https://github.com/<your-org>/foodguard-x.git
-cd foodguard-x
+### Development Workflow
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
 
-# Backend
-cd services/api && npm install && npm run dev
-
-# ML services
-cd ../../ml && python -m venv venv && source venv/bin/activate && pip install -r requirements.txt
-
-# Frontend
-cd ../apps/web && npm install && npm run dev
-
-# Or run everything with Docker
-docker-compose up --build
-```
+### Code Standards
+- Follow ESLint configuration for JavaScript/TypeScript
+- Use Prettier for code formatting
+- Write tests for new features
+- Document all API changes
+- Follow semantic versioning for releases
 
 ---
+
+## Project Roadmap
+
+### Phase 1 — MVP (Current)
+- [x] Batch tracking and Digital Food DNA
+- [x] Core risk scoring
+- [x] Basic dashboard
+- [x] Citizen reporting
+
+### Phase 2 — Intelligence (In Progress)
+- [ ] Graph intelligence and hidden-link detection
+- [ ] Time-series forecasting
+- [ ] Anomaly detection
+- [ ] AI-assisted investigation
+
+### Phase 3 — Advanced AI (Planned)
+- [ ] Computer vision inspection
+- [ ] Full agentic architecture
+- [ ] Contamination spread simulation
+- [ ] What-if decision engine
+
+### Phase 4 — National Scale (Future)
+- [ ] IoT sensor network integration
+- [ ] Multi-state deployment
+- [ ] Enterprise / institutional integrations
+- [ ] Full-scale blockchain network
+- [ ] Advanced MLOps and continuous learning at scale
+
+---
+
+## Support & Contact
+
+**For general queries:** foodguardx.team@gmail.com
+
+**For developers:** foodguardx.dev@outlook.com
+
+---
+
+## License
+
+This project is licensed under the MIT License — see the [LICENSE](LICENSE) file for details.
 
 <div align="center">
 
-## FOODGUARD X
-### Predict. Prevent. Trace. Simulate. Act.
-**A digital brain for India's food-safety ecosystem.**
+### FOODGUARD X
+**Predict. Prevent. Trace. Simulate. Act.**
 
 </div>
