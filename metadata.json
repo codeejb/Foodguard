@@ -1,0 +1,6 @@
+{
+  "name": "FOODGUARD X",
+  "description": "AI/ML-powered food-safety intelligence platform with anomaly detection, risk prediction, supply chain tracing, what-if simulation, and blockchain food passport.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
