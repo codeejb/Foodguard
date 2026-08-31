@@ -15,6 +15,7 @@ We don't wait for the first person to get sick. We find the warning signal first
 [![Status](https://img.shields.io/badge/STATUS-ACTIVE_DEVELOPMENT-2ea44f?style=for-the-badge&labelColor=0d1117)](#)
 [![License](https://img.shields.io/badge/LICENSE-MIT-3b82f6?style=for-the-badge&labelColor=0d1117)](LICENSE)
 [![Scale](https://img.shields.io/badge/SCALE-NATIONAL-a855f7?style=for-the-badge&labelColor=0d1117)](#)
+[![Payments](https://img.shields.io/badge/PAYMENTS-x402_%2B_ALGORAND-000000?style=for-the-badge&labelColor=0d1117)](#21--algorand-x402-micropayments--pay-to-unlock)
 
 <br/>
 
@@ -25,6 +26,8 @@ We don't wait for the first person to get sick. We find the warning signal first
 ![TensorFlow](https://img.shields.io/badge/TensorFlow-FF6F00?style=flat-square&logo=tensorflow&logoColor=white)
 ![Neo4j](https://img.shields.io/badge/Neo4j-008CC1?style=flat-square&logo=neo4j&logoColor=white)
 ![Hyperledger](https://img.shields.io/badge/Hyperledger_Fabric-2F3134?style=flat-square&logo=hyperledger&logoColor=white)
+![Algorand](https://img.shields.io/badge/Algorand-000000?style=flat-square&logo=algorand&logoColor=white)
+![x402](https://img.shields.io/badge/x402_Protocol-111827?style=flat-square&logo=lightning&logoColor=white)
 ![AWS](https://img.shields.io/badge/AWS-232F3E?style=flat-square&logo=amazonaws&logoColor=white)
 ![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white)
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?style=flat-square&logo=postgresql&logoColor=white)
@@ -37,10 +40,12 @@ We don't wait for the first person to get sick. We find the warning signal first
 
 <table align="center">
 <tr>
-<td align="center" width="20%"><h3>9</h3><sub>AI AGENTS</sub></td>
-<td align="center" width="20%"><h3>8</h3><sub>SUPPLY-CHAIN NODES</sub></td>
-<td align="center" width="20%"><h3>72h</h3><sub>RISK FORECAST WINDOW</sub></td>
-<td align="center" width="20%"><h3>1</h3><sub>NATIONAL DIGITAL TWIN</sub></td>
+<td align="center" width="16%"><h3>9</h3><sub>AI AGENTS</sub></td>
+<td align="center" width="16%"><h3>8</h3><sub>SUPPLY-CHAIN NODES</sub></td>
+<td align="center" width="16%"><h3>72h</h3><sub>RISK FORECAST WINDOW</sub></td>
+<td align="center" width="16%"><h3>1</h3><sub>NATIONAL DIGITAL TWIN</sub></td>
+<td align="center" width="16%"><h3>x402</h3><sub>PAY-PER-CALL PROTOCOL</sub></td>
+<td align="center" width="16%"><h3>≈3s</h3><sub>ALGORAND FINALITY</sub></td>
 </tr>
 </table>
 
@@ -55,6 +60,8 @@ We don't wait for the first person to get sick. We find the warning signal first
 `11` [AI Agent Architecture](#11--ai-agent-architecture) · `12` [Data Model](#12--data-model) · `13` [Security & Responsible AI](#13--security-privacy--responsible-ai) · `14` [Observability](#14--observability--mlops) · `15` [Project Structure](#15--project-structure)
 
 `16` [API Design](#16--api-design) · `17` [User Journeys](#17--key-user-journeys) · `18` [Why It's Different](#18--why-this-is-different) · `19` [Real-World Walkthrough](#19--real-world-walkthrough) · `20` [Roadmap & Setup](#20--roadmap--getting-started)
+
+`21` [Algorand x402 Micropayments](#21--algorand-x402-micropayments--pay-to-unlock)
 
 <br/>
 
@@ -168,8 +175,8 @@ flowchart TB
     subgraph L6["⑥ AI Agent Layer"]
         F1["Orchestrator + 8 Specialized Agents"]
     end
-    subgraph L7["⑦ Blockchain"]
-        G1["Hyperledger Fabric"]
+    subgraph L7["⑦ Blockchain + Payments"]
+        G1["Hyperledger Fabric · Algorand · x402 Facilitator"]
     end
     subgraph L8["⑧ Application Layer"]
         H1["Command Center · Inspectors · Labs · Businesses · Consumers"]
@@ -179,6 +186,7 @@ flowchart TB
     L4 --> L5 --> L6
     L6 --> L7
     L6 --> L8
+    L7 -.unlocks.-> L8
 
     style L1 fill:#0c1e3e,stroke:#38bdf8,color:#e2e8f0
     style L2 fill:#0f2942,stroke:#0ea5e9,color:#e2e8f0
@@ -190,7 +198,7 @@ flowchart TB
     style L8 fill:#083344,stroke:#22d3ee,color:#cffafe
 ```
 
-The **graph layer** models `Supplier → Batch → Factory → Warehouse → Transport → Distributor → Retailer → Consumer`, surfacing hidden multi-hop links a flat database would miss. **Blockchain** is used surgically — batch identity, lab verification, inspections, audit history — never as a database for everything.
+The **graph layer** models `Supplier → Batch → Factory → Warehouse → Transport → Distributor → Retailer → Consumer`, surfacing hidden multi-hop links a flat database would miss. **Blockchain** is used surgically — batch identity, lab verification, inspections, audit history — never as a database for everything. The **Algorand + x402 layer** sits alongside it purely for **pay-to-unlock premium intelligence** (deep forecasts, simulations, bulk API access) — it never gates safety-critical alerts.
 
 <br/>
 
@@ -204,6 +212,7 @@ The **graph layer** models `Supplier → Batch → Factory → Warehouse → Tra
 <tr><td><b>AI / ML</b></td><td><img src="https://img.shields.io/badge/Bedrock-232F3E?style=flat-square&logo=amazonaws&logoColor=white"/> <img src="https://img.shields.io/badge/SageMaker-232F3E?style=flat-square&logo=amazonaws&logoColor=white"/> <img src="https://img.shields.io/badge/TensorFlow-FF6F00?style=flat-square&logo=tensorflow&logoColor=white"/></td><td>LLM agents, training, vision</td></tr>
 <tr><td><b>Graph</b></td><td><img src="https://img.shields.io/badge/Neo4j-008CC1?style=flat-square&logo=neo4j&logoColor=white"/></td><td>Supply-chain intelligence</td></tr>
 <tr><td><b>Blockchain</b></td><td><img src="https://img.shields.io/badge/Hyperledger_Fabric-2F3134?style=flat-square&logo=hyperledger&logoColor=white"/></td><td>Tamper-evident audit trail</td></tr>
+<tr><td><b>Micropayments</b></td><td><img src="https://img.shields.io/badge/Algorand-000000?style=flat-square&logo=algorand&logoColor=white"/> <img src="https://img.shields.io/badge/x402_Protocol-111827?style=flat-square&logo=lightning&logoColor=white"/></td><td>Pay-per-request unlock for premium AI features</td></tr>
 <tr><td><b>Storage</b></td><td><img src="https://img.shields.io/badge/S3-569A31?style=flat-square&logo=amazons3&logoColor=white"/> <img src="https://img.shields.io/badge/PostgreSQL-4169E1?style=flat-square&logo=postgresql&logoColor=white"/> <img src="https://img.shields.io/badge/OpenSearch-005EB8?style=flat-square&logo=opensearch&logoColor=white"/></td><td>Raw data, app data, search</td></tr>
 <tr><td><b>Events / IoT</b></td><td><img src="https://img.shields.io/badge/AWS_IoT-232F3E?style=flat-square&logo=amazonaws&logoColor=white"/> <img src="https://img.shields.io/badge/EventBridge-232F3E?style=flat-square&logo=amazonaws&logoColor=white"/></td><td>Real-time ingestion</td></tr>
 <tr><td><b>Compute</b></td><td><img src="https://img.shields.io/badge/ECS%2FEKS-232F3E?style=flat-square&logo=amazonaws&logoColor=white"/> <img src="https://img.shields.io/badge/Lambda-FF9900?style=flat-square&logo=awslambda&logoColor=white"/> <img src="https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white"/></td><td>Containers & serverless</td></tr>
@@ -237,6 +246,8 @@ flowchart LR
     style H48 fill:#7c2d12,stroke:#fb923c,color:#ffedd5
     style H72 fill:#450a0a,stroke:#ef4444,color:#fee2e2
 ```
+
+> Base Food DNA + current risk score is **always free**. The full 72h forecast trendline with drivers is a premium unlock (see [§21](#21--algorand-x402-micropayments--pay-to-unlock)).
 
 <br/>
 
@@ -276,7 +287,7 @@ flowchart TD
 2. Restaurant #42    Risk 87/100   Complaint cluster + supplier pattern
 ```
 
-> None of this accuses anyone automatically — it generates evidence-based leads for human authorities.
+> None of this accuses anyone automatically — it generates evidence-based leads for human authorities. Running a full multi-city simulation or a Crime-Scene trace is metered via x402 for business/enterprise callers — regulators and authorities always get free, unmetered access.
 
 <br/>
 
@@ -331,16 +342,17 @@ flowchart TD
     O --> VA[Vision Agent] --> IMG[(Images)]
     O --> FA[Forecast Agent] --> TS[(Time Series)]
     O --> InsA[Inspector Agent] --> SimA[Simulation Agent] --> CitA[Citizen Agent]
+    O --> PayA[Payment Agent] --> X402[(x402 / Algorand)]
 
     classDef orch fill:#4c1d95,stroke:#e879f9,color:#fdf4ff
     classDef agent fill:#1e1b4b,stroke:#818cf8,color:#e0e7ff
     classDef store fill:#0c4a6e,stroke:#38bdf8,color:#e0f2fe
     class O orch
-    class RA,GA,IA,VA,FA,InsA,SimA,CitA agent
-    class RDB,GDB,EV,IMG,TS store
+    class RA,GA,IA,VA,FA,InsA,SimA,CitA,PayA agent
+    class RDB,GDB,EV,IMG,TS,X402 store
 ```
 
-Nine agents, one orchestrator — each owns one job, coordinated centrally so recommendations stay consistent and explainable.
+Nine core agents plus a dedicated **Payment Agent**, one orchestrator — each owns one job, coordinated centrally so recommendations stay consistent and explainable. The Payment Agent only decides *whether a call is authorized to proceed* — it never influences risk scoring.
 
 <br/>
 
@@ -356,6 +368,7 @@ erDiagram
     DISTRIBUTOR ||--o{ RETAILER : supplies
     CONSUMERREPORT }o--|| FOODBATCH : references
     INCIDENT }o--|| FOODBATCH : linked_to
+    PAYMENTRECEIPT }o--|| APICALL : authorizes
 ```
 
 <br/>
@@ -366,6 +379,7 @@ erDiagram
 - Permissioned blockchain — only verified participants can write
 - Citizen identity never exposed publicly; public data is aggregated/anonymized
 - **Human approval required for every high-impact action** (recalls, shutdowns, alerts)
+- **Payments never gate safety** — public health alerts, recalls, and regulator access are always free and unmetered; only non-critical premium analytics sit behind x402
 
 > Predictions are probabilistic. Vision output is a risk indicator, not a lab test. Simulations are estimates, not guarantees. AI recommendations always need human validation.
 
@@ -392,8 +406,10 @@ foodguard-x/
 ├── apps/            web · inspector · consumer
 ├── services/         api · risk-engine · graph-engine · vision-engine
 │                     forecast-engine · simulation-engine · investigation-engine
-├── agents/           orchestrator + 8 specialized agents
+│                     payment-engine        # x402 middleware + Algorand client
+├── agents/           orchestrator + 8 specialized agents + payment-agent
 ├── blockchain/       Hyperledger Fabric chaincode & network config
+│                     algorand/             # ASA config, smart contracts (PyTeal/Beaker)
 ├── ml/               training · inference · evaluation · feature-engineering
 ├── data/             schemas · pipelines · samples
 ├── infrastructure/   terraform · docker · kubernetes
@@ -411,6 +427,11 @@ POST /api/v1/incidents               GET  /api/v1/incidents/{id}/investigation
 GET  /api/v1/risk/india              GET  /api/v1/risk/region/{id}
 POST /api/v1/simulation              POST /api/v1/vision/analyze
 POST /api/v1/lab/analyze             POST /api/v1/citizen/report
+
+# Premium — x402 metered (HTTP 402 Payment Required until settled)
+GET  /api/v1/batches/{id}/forecast/72h        POST /api/v1/simulation/multi-city
+POST /api/v1/investigation/deep-trace         GET  /api/v1/reports/bulk-export
+POST /api/v1/payments/x402/challenge          POST /api/v1/payments/x402/verify
 ```
 
 <br/>
@@ -422,7 +443,7 @@ POST /api/v1/lab/analyze             POST /api/v1/citizen/report
 <tr valign="top">
 <td>Login → Risk Map → Threat → Investigation → Graph → Simulation → Action</td>
 <td>Copilot → Priorities → Site Visit → Vision Inspector → Evidence → Submit</td>
-<td>Register Batch → Lab Report → Track DNA → Monitor Risk → Resolve</td>
+<td>Register Batch → Lab Report → Track DNA → <b>Pay with Algo</b> → Deep Forecast → Resolve</td>
 <td>Scan QR → Passport → Safety Score → Why → Act</td>
 </tr>
 </table>
@@ -439,6 +460,7 @@ POST /api/v1/lab/analyze             POST /api/v1/citizen/report
 | Test after the problem | Forecast before the crisis |
 | Simple recall | Contamination simulation |
 | Historical data only | Continuous self-learning |
+| Flat subscriptions or none | Pay-per-call premium unlock via x402 + Algorand |
 
 <br/>
 
@@ -453,7 +475,7 @@ flowchart TD
     class A,B,C,D,E,F,G,H,I,J,K s
 ```
 
-A sensor drifts out of range → score drops, forecast worsens → complaints trickle in → the graph traces them to one warehouse → simulation estimates the spread → the warehouse becomes today's top priority — all before it becomes a public health story.
+A sensor drifts out of range → score drops, forecast worsens → complaints trickle in → the graph traces them to one warehouse → simulation estimates the spread → the warehouse becomes today's top priority — all before it becomes a public health story. If a business wants the full 72h drill-down mid-incident, one tap of **"Pay with Algo"** settles a micro-payment on-chain and the deep forecast unlocks instantly.
 
 <br/>
 
@@ -464,7 +486,8 @@ A sensor drifts out of range → score drops, forecast worsens → complaints tr
 | **1 · MVP** | Batch tracking, Food DNA, risk scoring, dashboard, citizen reporting |
 | **2 · Intelligence** | Graph intelligence, forecasting, anomaly detection |
 | **3 · Advanced AI** | Vision, agents, contamination simulation, what-if engine |
-| **4 · National Scale** | IoT, multi-state deployment, enterprise integrations, full MLOps |
+| **4 · Monetization** | x402 payment middleware, Algorand wallet integration, "Pay with Algo" unlock UX |
+| **5 · National Scale** | IoT, multi-state deployment, enterprise integrations, full MLOps |
 
 ```bash
 git clone https://github.com/<your-org>/foodguard-x.git && cd foodguard-x
@@ -472,9 +495,120 @@ git clone https://github.com/<your-org>/foodguard-x.git && cd foodguard-x
 cd services/api && npm install && npm run dev              # Backend
 cd ../../ml && pip install -r requirements.txt && python main.py   # ML services
 cd ../apps/web && npm install && npm run dev                # Frontend
+cd ../../services/payment-engine && npm install && npm run dev    # x402 + Algorand
 
 docker-compose up --build                                    # Or full stack
 ```
+
+<br/>
+
+## 21 — Algorand x402 Micropayments · Pay-to-Unlock
+
+<div align="center">
+
+![Algorand](https://img.shields.io/badge/Algorand-000000?style=flat-square&logo=algorand&logoColor=white)
+![x402](https://img.shields.io/badge/x402_Protocol-111827?style=flat-square&logo=lightning&logoColor=white)
+![USDCa](https://img.shields.io/badge/USDCa_Stablecoin-2775CA?style=flat-square&logo=usdc&logoColor=white)
+
+</div>
+
+FOODGUARD X keeps every **safety-critical** feature free forever — live risk map, recalls, alerts, citizen reporting, regulator/authority access. On top of that, non-critical **premium intelligence** (deep 72h forecasts, multi-city simulations, bulk exports, historical crime-scene traces) is metered per-call using the **x402 protocol**, settled instantly on **Algorand**. No subscriptions, no signup forms — the API itself asks for payment, and a wallet tap unlocks the response.
+
+**Why x402 + Algorand:**
+- **x402** revives the dormant HTTP `402 Payment Required` status — a server can respond "pay this much, to this address, for this resource," and the client's wallet settles it in the same request/response cycle.
+- **Algorand** gives sub-4-second finality, near-zero fees, and native stablecoins (USDCa) — ideal for thousands of small, frequent unlocks rather than one big invoice.
+
+```mermaid
+sequenceDiagram
+    participant U as Business / Inspector App
+    participant API as FOODGUARD API
+    participant PA as Payment Agent
+    participant ALGO as Algorand Network
+
+    U->>API: GET /batches/M492/forecast/72h
+    API->>PA: check entitlement
+    PA-->>API: not paid
+    API-->>U: 402 Payment Required (price, address, asset)
+    U->>ALGO: Sign & submit payment (USDCa)
+    ALGO-->>U: Transaction confirmed (~3s)
+    U->>API: Retry request + tx receipt
+    API->>PA: verify receipt on-chain
+    PA->>ALGO: confirm transaction
+    ALGO-->>PA: confirmed
+    PA-->>API: entitlement granted
+    API-->>U: 200 OK — 72h Forecast unlocked
+```
+
+**"Pay with Algo" button — what happens on tap:**
+
+```mermaid
+flowchart LR
+    A["Tap · Pay with Algo"] --> B[Wallet prompt opens] --> C[Sign transaction] --> D[Algorand settles ~3s]
+    D --> E[x402 receipt verified] --> F(("Feature Unlocked"))
+    style A fill:#000000,stroke:#38bdf8,color:#e0f2fe
+    style B fill:#0f172a,stroke:#818cf8,color:#e0e7ff
+    style C fill:#1e1b4b,stroke:#a78bfa,color:#ede9fe
+    style D fill:#052e16,stroke:#22c55e,color:#dcfce7
+    style E fill:#052e16,stroke:#22c55e,color:#dcfce7
+    style F fill:#4c1d95,stroke:#e879f9,color:#fdf4ff
+```
+
+**What's free vs. what's pay-to-unlock:**
+
+| Always Free | Pay-per-Unlock (x402) |
+|:--|:--|
+| Live risk map & current safety score | Full 72h forecast trendline with drivers |
+| Recalls, public alerts, citizen reporting | Multi-city contamination simulation |
+| Regulator / authority dashboards & API access | Deep food crime-scene trace across batches |
+| Blockchain food passport lookup | Bulk historical data export / analytics API |
+| Basic QR scan → safety score | AI Inspector Copilot priority feed (enterprise tier) |
+
+**Sample "402" response the API sends before payment:**
+
+```json
+HTTP/1.1 402 Payment Required
+{
+  "x402Version": 1,
+  "resource": "/api/v1/batches/M492/forecast/72h",
+  "price": "0.25",
+  "asset": "USDCa",
+  "network": "algorand-mainnet",
+  "payTo": "FGX7...ALGOADDR...9Q2K",
+  "expiresIn": 120
+}
+```
+
+**Client-side integration sketch:**
+
+```javascript
+// apps/web — "Pay with Algo" button handler
+async function unlockPremium(resourceUrl) {
+  let res = await fetch(resourceUrl);
+  if (res.status === 402) {
+    const { price, asset, payTo } = await res.json();
+    const txId = await algorandWallet.pay({ to: payTo, amount: price, asset });
+    res = await fetch(resourceUrl, {
+      headers: { "X-PAYMENT": txId }
+    });
+  }
+  return res.json(); // unlocked feature data
+}
+```
+
+**New API endpoints:**
+
+```
+GET  /api/v1/batches/{id}/forecast/72h        → 402 until paid, then full forecast
+POST /api/v1/simulation/multi-city            → 402 until paid, then simulation result
+POST /api/v1/investigation/deep-trace         → 402 until paid, then evidence chain
+GET  /api/v1/reports/bulk-export              → 402 until paid, then CSV/JSON export
+POST /api/v1/payments/x402/challenge          → issue price + address for a resource
+POST /api/v1/payments/x402/verify             → verify an on-chain Algorand receipt
+```
+
+> Payments are handled by the dedicated **Payment Agent** and a separate `payment-engine` service — kept fully isolated from the Risk, Forecast, and Investigation agents so a wallet outage or price change can **never** delay or block a safety-critical alert.
+
+<br/>
 
 ---
 
